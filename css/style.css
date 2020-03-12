@@ -1,0 +1,78 @@
+:root {
+  /* couleurs */
+  --white: #ffffff;
+  --orange: #ff691f;
+  --yellow: #fab81e;
+  --lightgreen: #7fdbb6;
+  --green: #19cf86;
+  --lightblue: #91d2fa;
+  --blue: #1b95e0;
+  --grey: #abb8c2;
+  --red: #e81c4f;
+  --pink: #f58ea8;
+  --purple: #981ceb;
+  --black: #000000;
+
+  /* font */
+  font: 1rem "BlinkMacSystemFont", -apple-system, "Roboto", sans-serif;
+}
+
+#app {
+  /* grille */
+  display: grid;
+  /* grille en 4x3 */
+  grid-template-areas:
+    ". . . "
+    ". . . "
+    ". . . ";
+  /* espacement */
+  padding: 80px;
+  grid-gap: 45px;
+  /* fullscreen */
+  width: 100vw;
+  height: 100vh;
+}
+
+img {
+  /* taille */
+  width: 6rem;
+  height: 6rem;
+}
+
+.grid-item {
+  /* grille */
+  display: grid;
+  /* grille en 1x2 */
+  grid-template-rows: 85% 15%;
+  /* background */
+  background: whitesmoke;
+  /* bordure et ombre */
+  border-radius: 30px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 10px 60px;
+  /* animation mise en avant */
+  transition: transform 500ms;
+}
+
+.grid-item:hover {
+  /* transition */
+  transition: transform 100ms;
+  /* animation mise en avant */
+  transform: scale(1.1);
+}
+
+.grid-cell--bottom {
+  /* flex */
+  display: flex;
+  /* flex:center */
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-cell--top {
+  border-radius: 30px 30px 0 0;
+}
+.grid-cell--bottom {
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-radius: 0 0 30px 30px;
+}
