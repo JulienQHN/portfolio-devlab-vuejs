@@ -20,13 +20,13 @@
 #app {
   /* grille */
   display: grid;
-  /* grille en 4x3 */
+  /* grille en 3x3 */
   grid-template-areas:
     ". . . "
     ". . . "
     ". . . ";
   /* espacement */
-  padding: 80px;
+  padding: 30px;
   grid-gap: 45px;
   /* fullscreen */
   width: 100vw;
@@ -66,13 +66,16 @@ img {
   /* flex:center */
   justify-content: center;
   align-items: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-radius: 0 0 30px 30px;
 }
 
 .grid-cell--top {
   border-radius: 30px 30px 0 0;
 }
-.grid-cell--bottom {
-  font-weight: 600;
-  font-size: 1.1rem;
-  border-radius: 0 0 30px 30px;
+
+img {
+  width: 100%;
+  border-radius: 30px 30px 0 0;
 }

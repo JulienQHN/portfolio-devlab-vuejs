@@ -26,60 +26,93 @@
     </div>
 
     <script>
-           "use strict";
+      "use strict";
 
-           function preview(name) {
-             var out = `<div  src="images/` + name + `.jpg">`;
-             return out;
-           }
-
-           Vue.component("swatch", {
-             props: ["active", "swatch", "effect"],
-             template: `
+      // preview appelle chaque image du dossier image
+      function preview(name) {
+        var out = `<img class="fit" src="images/` + name + `.jpg">`;
+        return out;
+      }
+      // template de la grille
+      Vue.component("swatch", {
+        props: ["active", "swatch", "effect"],
+        template: `
       	<div class="grid-item">
-      		<div class="grid-cell--top" :style="{ backgroundImage:`url(${swatch.preview})` }">
+      		<div class="grid-cell--top" v-html="swatch.previews" >
       		</div>
       		<div class="grid-cell--bottom" :style="effect(swatch)" >
       			{{ swatch.project.toUpperCase() }}
       		</div>
       	</div>
       `
-           });
-
-           var app = new Vue({
-             el: "#app",
-             data: {
-               active: "",
-               swatches: [
-                 {
-                   name: "#ff691f",
-                   project: "Projet 1",
-                   preview: "<https://vuejs.org/images/logo.png>"
-                 },
-                 { name: "#fab81e", project: "Projet 2" },
-                 { name: "#7fdbb6", project: "Projet 3" },
-                 { name: "#19cf86", project: "Projet 4" },
-                 { name: "#91d2fa", project: "Projet 5" },
-                 { name: "#1b95e0", project: "Projet 6" },
-                 { name: "#abb8c2", project: "Projet 7" },
-                 { name: "#e81c4f", project: "Projet 8" },
-                 { name: "#f58ea8", project: "Projet 9" }
-               ]
-             },
-             methods: {
-               // Activation du swatch (emoji/color)
-               activate: function(swatch) {
-                 this.active = swatch;
-               },
-               // Quand swatch activé gradient + swatch mis en arriere plan
-               gradient: function(swatch) {
-                 return {
-                   background:
-                     "linear-gradient(100deg, whitesmoke -50%, " + swatch.name + ")"
-                 };
-               }
-             }
-           });
+      });
+      // data pour chaque projet de la grille
+      var app = new Vue({
+        el: "#app",
+        data: {
+          active: "",
+          swatches: [
+            {
+              name: "#ff691f",
+              project: "Projet 1",
+              previews: preview("Questions")
+            },
+            {
+              name: "#fab81e",
+              project: "Projet 2",
+              previews: preview("Questions")
+            },
+            {
+              name: "#7fdbb6",
+              project: "Projet 3",
+              previews: preview("Questions")
+            },
+            {
+              name: "#19cf86",
+              project: "Projet 4",
+              previews: preview("Questions")
+            },
+            {
+              name: "#91d2fa",
+              project: "Projet 5",
+              previews: preview("Questions")
+            },
+            {
+              name: "#1b95e0",
+              project: "Projet 6",
+              previews: preview("Questions")
+            },
+            {
+              name: "#abb8c2",
+              project: "Projet 7",
+              previews: preview("Questions")
+            },
+            {
+              name: "#e81c4f",
+              project: "Projet 8",
+              previews: preview("Questions")
+            },
+            {
+              name: "#f58ea8",
+              project: "Projet 9",
+              previews: preview("Questions")
+            }
+          ]
+        },
+        methods: {
+          // Activation du swatch (color)
+          activate: function(swatch) {
+            this.active = swatch;
+          },
+          // Quand swatch activé gradient + swatch mis en arriere plan
+          gradient: function(swatch) {
+            return {
+              background:
+                "linear-gradient(100deg, whitesmoke -50%, " + swatch.name + ")"
+            };
+          }
+        }
+      });
     </script>
   </body>
 </html>
