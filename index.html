@@ -15,57 +15,75 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
   </head>
   <body>
-    <div id="app" :style="gradient(active)">
-      <swatch
-        v-for="swatch in swatches"
-        @click.native="activate(swatch)"
-        :active="active"
-        :swatch="swatch"
-        :effect="gradient"
-      ></swatch>
+    <div id="app">
+      <div v-for="swatch in swatches" >
+        <div class="grid-item" @click="showModal = true" >
+          <div class="grid-cell--top" v-html="swatch.previews" >
+          </div>
+          <div class="grid-cell--bottom">
+            {{ swatch.project }}
+          </div>
+          <modal v-if="showModal" @close="showModal = false">
+            <p slot="header">
+              {{swatch.project}}
+            </p>
+          </modal>
+        </div>
+      </div>
     </div>
-
     <script>
       "use strict";
-
+      Vue.component('modal', {
+        template:  `<transition name="modal">
+        <div class="modal-mask">
+            <div class="modal-wrapper">
+                <div class="modal-container">
+                    <div class="modal-header">
+                         <slot name="header">
+                                default header
+                         </slot>
+                         <button @click="$emit('close')"> close</button>
+                    </div>
+                        <div class="modal-body col-6 ">
+                            <slot name="body">
+                                default body
+                            </slot>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </transition>`
+      });
       // preview appelle chaque image du dossier image
       function preview(name) {
         var out = `<img class="fit" src="images/` + name + `.jpg">`;
         return out;
       }
-      // template de la grille
-      Vue.component("swatch", {
-        props: ["active", "swatch", "effect"],
-        template: `
-      	<div class="grid-item">
-      		<div class="grid-cell--top" v-html="swatch.previews" >
-      		</div>
-      		<div class="grid-cell--bottom" :style="effect(swatch)" >
-      			{{ swatch.project.toUpperCase() }}
-      		</div>
-      	</div>
-      `
-      });
+
       // data pour chaque projet de la grille
-      var app = new Vue({
+      let app = new Vue({
         el: "#app",
         data: {
-          active: "",
+          showModal: false,
           swatches: [
             {
+              id: '1',
               name: "#ff691f",
               project: "Projet 1",
-              previews: preview("Questions")
+              previews: preview("Questions"),
+              text: "sdgcfvsyuhbczj"
             },
             {
               name: "#fab81e",
               project: "Projet 2",
-              previews: preview("Questions")
+              previews: preview("Questions"),
+              text: "efzargt"
             },
             {
               name: "#7fdbb6",
               project: "Projet 3",
-              previews: preview("Questions")
+              previews: preview("Questions"),
+              text: "hnj"
             },
             {
               name: "#19cf86",
@@ -97,21 +115,8 @@
               project: "Projet 9",
               previews: preview("Questions")
             }
-          ]
+          ],
         },
-        methods: {
-          // Activation du swatch (color)
-          activate: function(swatch) {
-            this.active = swatch;
-          },
-          // Quand swatch activé gradient + swatch mis en arriere plan
-          gradient: function(swatch) {
-            return {
-              background:
-                "linear-gradient(100deg, whitesmoke -50%, " + swatch.name + ")"
-            };
-          }
-        }
       });
     </script>
   </body>
