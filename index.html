@@ -13,6 +13,8 @@
       href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900"
     />
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
   </head>
   <body>
     <div id="app">
@@ -42,12 +44,13 @@
                          <slot name="header">
                                 default header
                          </slot>
-                         <button @click="$emit('close')"> close</button>
                     </div>
                         <div class="modal-body col-6 ">
                             <slot name="body">
                                 default body
                             </slot>
+                            <button @click="$emit('close')" class="btn btn-primary"> close</button>
+
                         </div>
                 </div>
             </div>
