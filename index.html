@@ -16,18 +16,28 @@
   </head>
   <body>
     <div id="app">
+
       <div v-for="swatch in swatches" >
-        <div class="grid-item" @click="showModal = true" >
+        <div class="conteneurprojet" >
+        <div class="grid-item" >
           <div class="grid-cell--top" v-html="swatch.previews" >
           </div>
-          <div class="grid-cell--bottom">
+          <div class="grid-cell--bottom" >
             {{ swatch.project }}
+
           </div>
-          <modal v-if="showModal" @close="showModal = false">
-            <p slot="header">
-              {{swatch.project}}
-            </p>
-          </modal>
+
+            <div class="overlay">
+              <div class="text">
+                <button class="boutonmodal menu" @click="showModal = true">En savoir plus ?</button>
+                <modal v-if="showModal" @close="showModal = false">
+                <p slot="header">
+                  {{swatch.project}}
+                </p>
+                </modal>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
