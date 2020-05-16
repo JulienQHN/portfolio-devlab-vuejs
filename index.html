@@ -13,23 +13,40 @@
       href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900"
     />
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
   </head>
   <body>
     <div id="app">
+
       <div v-for="swatch in swatches" >
-        <div class="grid-item" @click="showModal = true" >
+        <div class="conteneurprojet" >
+        <div class="grid-item" >
           <div class="grid-cell--top" v-html="swatch.previews" >
           </div>
-          <div class="grid-cell--bottom">
+          <div class="grid-cell--bottom" >
             {{ swatch.project }}
+
           </div>
-          <modal v-if="showModal" @close="showModal = false">
-            <p slot="header">
-              {{swatch.project}}
-            </p>
-          </modal>
+
+            <div class="overlay">
+              <div class="text">
+                <button class="boutonmodal menu" @click="showModal = true">En savoir plus ?</button>
+                <modal v-if="showModal" @close="showModal = false">
+                <div slot="header">
+                  {{ swatch.project }}
+
+                </div>
+
+                  <div slot="body">
+                    <img :src="swatch.image" alt="illustration" class="portrait"><br>
+
+                    {{ swatch.text }}
+
+                  </div>
+                </modal>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -38,19 +55,20 @@
       Vue.component('modal', {
         template:  `<transition name="modal">
         <div class="modal-mask">
-            <div class="modal-wrapper">
-                <div class="modal-container">
-                    <div class="modal-header">
+        <div class="modal-wrapper">
+                            <button @click="$emit('close')" type="button" class="close">X</button>
+
+            <div class="modal-container">
+
+                <div class="modal-header">
                          <slot name="header">
                                 default header
                          </slot>
                     </div>
-                        <div class="modal-body col-6 ">
+                        <div class="modal-body">
                             <slot name="body">
                                 default body
                             </slot>
-                            <button @click="$emit('close')" class="btn btn-primary"> close</button>
-
                         </div>
                 </div>
             </div>
@@ -74,13 +92,16 @@
               name: "#ff691f",
               project: "Projet 1",
               previews: preview("Questions"),
-              text: "sdgcfvsyuhbczj"
+              text :  "efzargt",
+              image : 'https://s3-eu-west-1.amazonaws.com/assets.atout-on-line.com/images/commerce/2013/FichesEcoles/iim_banniere_600.jpg'
             },
             {
               name: "#fab81e",
               project: "Projet 2",
               previews: preview("Questions"),
-              text: "efzargt"
+              text: "efzargt",
+              image : 'images/Questions.jpg'
+
             },
             {
               name: "#7fdbb6",
@@ -91,32 +112,42 @@
             {
               name: "#19cf86",
               project: "Projet 4",
-              previews: preview("Questions")
+              previews: preview("Questions"),
+              text: "hnj",
+
             },
             {
               name: "#91d2fa",
               project: "Projet 5",
-              previews: preview("Questions")
+              previews: preview("Questions"),
             },
             {
               name: "#1b95e0",
               project: "Projet 6",
-              previews: preview("Questions")
+              previews: preview("Questions"),
+              text: "hnj"
+
             },
             {
               name: "#abb8c2",
               project: "Projet 7",
-              previews: preview("Questions")
+              previews: preview("Questions"),
+              text: "hnj"
+
             },
             {
               name: "#e81c4f",
               project: "Projet 8",
-              previews: preview("Questions")
+              previews: preview("Questions"),
+              text: "hnj"
+
             },
             {
               name: "#f58ea8",
               project: "Projet 9",
-              previews: preview("Questions")
+              previews: preview("Questions"),
+              text: "hnj"
+
             }
           ],
         },
