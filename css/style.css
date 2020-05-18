@@ -1,30 +1,11 @@
-:root {
-  /* couleurs */
-  --white: #ffffff;
-  --orange: #ff691f;
-  --yellow: #fab81e;
-  --lightgreen: #7fdbb6;
-  --green: #19cf86;
-  --lightblue: #91d2fa;
-  --blue: #1b95e0;
-  --grey: #abb8c2;
-  --red: #e81c4f;
-  --pink: #f58ea8;
-  --purple: #981ceb;
-  --black: #000000;
-
-  /* font */
-  font: 1rem "BlinkMacSystemFont", -apple-system, "Roboto", sans-serif;
-}
-
 #app {
   /* grille */
   display: grid;
   /* grille en 3x3 */
   grid-template-areas:
-    ". . . "
-    ". . . "
-    ". . . ";
+          ". . . "
+          ". . . "
+          ". . . ";
   /* espacement */
   padding: 30px;
   grid-gap: 45px;
@@ -32,6 +13,7 @@
   width: 100vw;
   height: 100vh;
 }
+
 
 img {
   /* taille */
@@ -53,10 +35,9 @@ img {
   transition: transform 500ms;
 }
 
+
 /*.grid-item:hover {
-
   transition: transform 100ms;
-
   transform: scale(1.1);
 }*/
 
@@ -70,13 +51,13 @@ img {
   font-size: 1.1rem;
   border-radius: 0 0 30px 30px;
 }
-
 .grid-cell--top {
   border-radius: 30px 30px 0 0;
 }
 
 img {
   width: 100%;
+  border-radius: 30px 30px 0 0;
 }
 
 .overlay {
@@ -96,7 +77,6 @@ img {
 .conteneurprojet:hover .overlay {
   opacity: 1;
 }
-
 .text {
   font-size: 20px;
   position: absolute;
@@ -110,6 +90,7 @@ img {
   font-family: "Poppins Light",arial,sans-serif;
 
 }
+
 
 .conteneurprojet {
   position: relative;
@@ -147,11 +128,11 @@ img {
   font-family: Helvetica, Arial, sans-serif;
 
 }
-
 .modal-header h3 {
   margin-top: 0;
   color: #42b983;
 }
+
 
 .modal-body {
   margin: 20px 0;
@@ -196,8 +177,3 @@ img {
 .title {
   font-size: 42px;
 }
-
-
-
-
-
