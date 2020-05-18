@@ -1,3 +1,8 @@
+* {
+  font-family: Montserrat,sans-serif;
+}
+
+
 #app {
   /* grille */
   display: grid;
@@ -33,6 +38,8 @@ img {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 10px 60px;
   /* animation mise en avant */
   transition: transform 500ms;
+
+
 }
 
 
@@ -55,8 +62,10 @@ img {
   border-radius: 30px 30px 0 0;
 }
 
-img {
+.fit {
   width: 100%;
+  border-radius: 30px 30px 0 0;
+
 }
 
 .overlay {
@@ -86,7 +95,6 @@ img {
   transform: translate(-50%, -50%);
   text-align: center;
   width: 200px;
-  font-family: "Poppins Light",arial,sans-serif;
 
 }
 
@@ -100,14 +108,13 @@ img {
 
 .modal-mask {
   position: fixed;
+  left: 50%;
+  top: 50%;
   z-index: 9998;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   background-color: rgba(0, 0, 0, .5);
-  display: table;
   transition: opacity .3s ease;
+
+
 
 }
 
@@ -120,11 +127,12 @@ img {
   width: 800px;
   margin: 0 auto;
   padding: 20px 30px;
-  background-color: #fff;
+  background-color: #F6F6F6;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
   transition: all .3s ease;
   font-family: Helvetica, Arial, sans-serif;
+
 
 }
 .modal-header h3 {
@@ -160,6 +168,7 @@ img {
 
 
 .portrait {
+  width: 100%;
   max-width: 400px;
 
 }
@@ -176,3 +185,4 @@ img {
 .title {
   font-size: 42px;
 }
+
