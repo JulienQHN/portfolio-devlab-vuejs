@@ -32,17 +32,19 @@
               <div class="text">
                 <button class="boutonmodal menu" @click="showModal = true">En savoir plus ?</button>
                 <modal v-if="showModal" @close="showModal = false">
+
                 <div slot="header">
-                  {{ swatch.project }}
+                  <p class="title">{{ swatch.project }}</p>
 
                 </div>
 
                   <div slot="body">
-                    <img :src="swatch.image" alt="illustration" class="portrait"><br>
+                    <img :src="swatch.image" alt="illustration" class="portrait"><br><br>
 
                     {{ swatch.text }}
 
                   </div>
+
                 </modal>
               </div>
             </div>
@@ -69,6 +71,14 @@
                             <slot name="body">
                                 default body
                             </slot>
+
+                        </div>
+
+                        <div class="footer">
+                            <button @click="$emit('close')" type="button" class="button">CLOSE</button>
+                            <button class="button">VOIR LE PROJET</button>
+
+
                         </div>
                 </div>
             </div>
@@ -90,10 +100,10 @@
             {
               id: '1',
               name: "#ff691f",
-              project: "Projet 1",
+              project: "Be Happik",
               previews: preview("Questions"),
-              text :  "efzargt",
-              image : 'https://s3-eu-west-1.amazonaws.com/assets.atout-on-line.com/images/commerce/2013/FichesEcoles/iim_banniere_600.jpg'
+              text :  "Be Happik est une solution SAAS* et d’application proposant d’améliorer le bien être en entreprise en proposant plus d’engagement de la part des collaborateurs.",
+              image : 'https://devlab.devinci.fr/wp-content/uploads/2019/03/adult-2449725_1920-768x512.jpg'
             },
             {
               name: "#fab81e",
