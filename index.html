@@ -17,39 +17,127 @@
   </head>
   <body>
     <div id="app">
-
-      <div v-for="swatch in swatches" >
-        <div class="conteneurprojet" >
-        <div class="grid-item" >
-          <div class="grid-cell--top" v-html="swatch.previews" >
+        <div class="grid-item"  @click="showModal = true" >
+          <div class="grid-cell--top">
+            <img src="images/Questions.jpg" alt="feg">
           </div>
-          <div class="grid-cell--bottom" >
-            {{ swatch.project }}
-
+          <div class="grid-cell--bottom">
+            trudyfkughil
           </div>
 
-            <div class="overlay">
-              <div class="text">
-                <button class="boutonmodal menu" @click="showModal = true">En savoir plus ?</button>
-                <modal v-if="showModal" @close="showModal = false">
+          </div>
+        <div class="grid-item"  @click="showModal2 = true" >
+          <div class="grid-cell--top">
+            <img src="images/Questions.jpg" alt="feg">
+          </div>
+          <div class="grid-cell--bottom">
+            trudyfkughil
+          </div>
 
-                <div slot="header">
-                  <p class="title">{{ swatch.project }}</p>
-
-                </div>
-
-                  <div slot="body">
-                    <img :src="swatch.image" alt="illustration" class="portrait"><br><br>
-
-                    {{ swatch.text }}
-
-                  </div>
-
-                </modal>
-              </div>
-            </div>
+        </div>
+        <div class="grid-item"  @click="showModal3 = true" >
+          <div class="grid-cell--top">
+            <img src="images/Questions.jpg" alt="feg">
+          </div>
+          <div class="grid-cell--bottom">
+            trudyfkughil
           </div>
         </div>
+      <div class="grid-item"  @click="showModal4 = true" >
+        <div class="grid-cell--top">
+          <img src="images/Questions.jpg" alt="feg">
+        </div>
+        <div class="grid-cell--bottom">
+          trudyfkughil
+        </div>
+
+      </div>
+      <div class="grid-item"  @click="showModal5 = true" >
+        <div class="grid-cell--top">
+          <img src="images/Questions.jpg" alt="feg">
+        </div>
+        <div class="grid-cell--bottom">
+          trudyfkughil
+        </div>
+      </div>
+      <div class="grid-item"  @click="showModal6 = true" >
+        <div class="grid-cell--top">
+          <img src="images/Questions.jpg" alt="feg">
+        </div>
+        <div class="grid-cell--bottom">
+          trudyfkughil
+        </div>
+      </div>
+      <div class="grid-item"  @click="showModal7 = true" >
+        <div class="grid-cell--top">
+          <img src="images/Questions.jpg" alt="feg">
+        </div>
+        <div class="grid-cell--bottom">
+          trudyfkughil
+        </div>
+
+      </div>
+      <div class="grid-item"  @click="showModal8 = true" >
+        <div class="grid-cell--top">
+          <img src="images/Questions.jpg" alt="feg">
+        </div>
+        <div class="grid-cell--bottom">
+          trudyfkughil
+        </div>
+
+      </div>
+      <div class="grid-item"  @click="showModal9 = true" >
+        <div class="grid-cell--top">
+          <img src="images/Questions.jpg" alt="feg">
+        </div>
+        <div class="grid-cell--bottom">
+          trudyfkughil
+        </div>
+      </div>
+      <div>
+        <modal v-if="showModal" @close="showModal = false">
+          <h3 slot="header">custom header</h3>
+        </modal>
+      </div>
+      <div>
+        <modal2 v-if="showModal2" @close="showModal2 = false">
+          <h3 slot="header">custom header</h3>
+        </modal2>
+      </div>
+      <div>
+        <modal3 v-if="showModal3" @close="showModal3 = false">
+          <h3 slot="header">custom header</h3>
+        </modal3>
+      </div>
+      <div>
+        <modal4 v-if="showModal4" @close="showModal4 = false">
+          <h3 slot="header">custom header</h3>
+        </modal4>
+      </div>
+      <div>
+        <modal5 v-if="showModal5" @close="showModal5 = false">
+          <h3 slot="header">custom header</h3>
+        </modal5>
+      </div>
+      <div>
+        <modal6 v-if="showModal6" @close="showModal6 = false">
+          <h3 slot="header">custom header</h3>
+        </modal6>
+      </div>
+      <div>
+        <modal7 v-if="showModal7" @close="showModal7 = false">
+          <h3 slot="header">custom header</h3>
+        </modal7>
+      </div>
+      <div>
+        <modal8 v-if="showModal8" @close="showModal8 = false">
+          <h3 slot="header">custom header</h3>
+        </modal8>
+      </div>
+      <div>
+        <modal9 v-if="showModal9" @close="showModal9 = false">
+          <h3 slot="header">custom header</h3>
+        </modal9>
       </div>
     </div>
     <script>
@@ -57,31 +145,243 @@
       Vue.component('modal', {
         template:  `<transition name="modal">
         <div class="modal-mask">
-        <div class="modal-wrapper">
-            <button @click="$emit('close')" type="button" class="close">X</button>
+          <div class="modal-wrapper">
 
-            <div class="modal-container">
+              <div class="modal-container">
+                  <div class="modal-header">
+                      <slot name="header">
+                           default header
+                      </slot>
+                  </div>
+                  <div class="modal-body">
+                              <slot name="body">
+                                  default body
+                              </slot>
 
-                <div class="modal-header">
-                         <slot name="header">
-                                default header
-                         </slot>
-                    </div>
-                        <div class="modal-body">
-                            <slot name="body">
-                                default body
-                            </slot>
+                          </div>
+                          <div class="footer">
+                              <button @click="$emit('close')" type="button" class="button">CLOSE</button>
+                              <button class="button">VOIR LE PROJET</button>
+                          </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+    </transition>`
+      });
+      Vue.component('modal2', {
+        template:  `<transition name="modal">
+        <div class="modal-mask">
+          <div class="modal-wrapper">
 
-                        </div>
+              <div class="modal-container">
+                  <div class="modal-header">
+                      <slot name="header">
+                           default header
+                      </slot>
+                  </div>
+                  <div class="modal-body">
+                              <slot name="body">
+                                  default body
+                              </slot>
 
-                        <div class="footer">
-                            <button @click="$emit('close')" type="button" class="button">CLOSE</button>
-                            <button class="button">VOIR LE PROJET</button>
+                          </div>
+                          <div class="footer">
+                              <button @click="$emit('close')" type="button" class="button">CLOSE</button>
+                              <button class="button">VOIR LE PROJET</button>
+                          </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+    </transition>`
+      });
+      Vue.component('modal3', {
+        template:  `<transition name="modal">
+        <div class="modal-mask">
+          <div class="modal-wrapper">
 
+              <div class="modal-container">
+                  <div class="modal-header">
+                      <slot name="header">
+                           default header
+                      </slot>
+                  </div>
+                  <div class="modal-body">
+                              <slot name="body">
+                                  default body
+                              </slot>
 
-                        </div>
-                </div>
-            </div>
+                          </div>
+                          <div class="footer">
+                              <button @click="$emit('close')" type="button" class="button">CLOSE</button>
+                              <button class="button">VOIR LE PROJET</button>
+                          </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+    </transition>`
+      });
+      Vue.component('modal4', {
+        template:  `<transition name="modal">
+        <div class="modal-mask">
+          <div class="modal-wrapper">
+
+              <div class="modal-container">
+                  <div class="modal-header">
+                      <slot name="header">
+                           default header
+                      </slot>
+                  </div>
+                  <div class="modal-body">
+                              <slot name="body">
+                                  default body
+                              </slot>
+
+                          </div>
+                          <div class="footer">
+                              <button @click="$emit('close')" type="button" class="button">CLOSE</button>
+                              <button class="button">VOIR LE PROJET</button>
+                          </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+    </transition>`
+      });
+      Vue.component('modal5', {
+        template:  `<transition name="modal">
+        <div class="modal-mask">
+          <div class="modal-wrapper">
+
+              <div class="modal-container">
+                  <div class="modal-header">
+                      <slot name="header">
+                           default header
+                      </slot>
+                  </div>
+                  <div class="modal-body">
+                              <slot name="body">
+                                  default body
+                              </slot>
+
+                          </div>
+                          <div class="footer">
+                              <button @click="$emit('close')" type="button" class="button">CLOSE</button>
+                              <button class="button">VOIR LE PROJET</button>
+                          </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+    </transition>`
+      });
+      Vue.component('modal6', {
+        template:  `<transition name="modal">
+        <div class="modal-mask">
+          <div class="modal-wrapper">
+
+              <div class="modal-container">
+                  <div class="modal-header">
+                      <slot name="header">
+                           default header
+                      </slot>
+                  </div>
+                  <div class="modal-body">
+                              <slot name="body">
+                                  default body
+                              </slot>
+
+                          </div>
+                          <div class="footer">
+                              <button @click="$emit('close')" type="button" class="button">CLOSE</button>
+                              <button class="button">VOIR LE PROJET</button>
+                          </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+    </transition>`
+      });
+      Vue.component('modal7', {
+        template:  `<transition name="modal">
+        <div class="modal-mask">
+          <div class="modal-wrapper">
+
+              <div class="modal-container">
+                  <div class="modal-header">
+                      <slot name="header">
+                           default header
+                      </slot>
+                  </div>
+                  <div class="modal-body">
+                              <slot name="body">
+                                  default body
+                              </slot>
+
+                          </div>
+                          <div class="footer">
+                              <button @click="$emit('close')" type="button" class="button">CLOSE</button>
+                              <button class="button">VOIR LE PROJET</button>
+                          </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+    </transition>`
+      });
+      Vue.component('modal8', {
+        template:  `<transition name="modal">
+        <div class="modal-mask">
+          <div class="modal-wrapper">
+
+              <div class="modal-container">
+                  <div class="modal-header">
+                      <slot name="header">
+                           default header
+                      </slot>
+                  </div>
+                  <div class="modal-body">
+                              <slot name="body">
+                                  default body
+                              </slot>
+
+                          </div>
+                          <div class="footer">
+                              <button @click="$emit('close')" type="button" class="button">CLOSE</button>
+                              <button class="button">VOIR LE PROJET</button>
+                          </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+    </transition>`
+      });
+      Vue.component('modal9', {
+        template:  `<transition name="modal">
+        <div class="modal-mask">
+          <div class="modal-wrapper">
+
+              <div class="modal-container">
+                  <div class="modal-header">
+                      <slot name="header">
+                           default header
+                      </slot>
+                  </div>
+                  <div class="modal-body">
+                              <slot name="body">
+                                  default body
+                              </slot>
+
+                          </div>
+                          <div class="footer">
+                              <button @click="$emit('close')" type="button" class="button">CLOSE</button>
+                              <button class="button">VOIR LE PROJET</button>
+                          </div>
+                  </div>
+              </div>
+          </div>
         </div>
     </transition>`
       });
@@ -96,6 +396,14 @@
         el: "#app",
         data: {
           showModal: false,
+          showModal2: false,
+          showModal3: false,
+          showModal4: false,
+          showModal5: false,
+          showModal6: false,
+          showModal7: false,
+          showModal8: false,
+          showModal9: false,
           swatches: [
             {
               id: '1',
