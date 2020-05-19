@@ -6,6 +6,13 @@ body{
   overflow-X:hidden;
 }
 
+.main_title {
+  text-align: center;
+  font-size: 42px;
+}
+
+
+
 #app {
   /* grille */
   display: grid;
@@ -42,7 +49,6 @@ img {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 10px 60px;
   /* animation mise en avant */
   transition: transform 500ms;
-  width: 500px;
 
 }
 
@@ -143,4 +149,8 @@ img {
 
 .title {
   font-size: 42px;
+}
+
+.grid-item:hover {
+  cursor: pointer;
 }
