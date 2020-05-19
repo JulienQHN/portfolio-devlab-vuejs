@@ -74,8 +74,9 @@ img {
 
 .modal-mask {
   position: fixed;
-  left: 0;
-  top: 0;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   z-index: 9998;
   background-color: rgba(0, 0, 0, .5);
   transition: opacity .3s ease;
@@ -95,6 +96,7 @@ img {
   box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
   transition: all .3s ease;
   font-family: Helvetica, Arial, sans-serif;
+  text-align: center;
 
 
 }
@@ -126,6 +128,7 @@ img {
 .portrait {
   width: 100%;
   max-width: 400px;
+  border-radius: 0;
 
 }
 
@@ -141,4 +144,3 @@ img {
 .title {
   font-size: 42px;
 }
-

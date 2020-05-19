@@ -1,151 +1,242 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" href="css/style.css" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.rawgit.com/jgthms/minireset.css/master/minireset.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-  </head>
-  <body>
-    <div id="app">
-        <div class="grid-item"  @click="showModal = true" >
-          <div class="grid-cell--top">
-            <img src="images/Questions.jpg" alt="feg">
-          </div>
-          <div class="grid-cell--bottom">
-            trudyfkughil
-          </div>
-
-          </div>
-        <div class="grid-item"  @click="showModal2 = true" >
-          <div class="grid-cell--top">
-            <img src="images/Questions.jpg" alt="feg">
-          </div>
-          <div class="grid-cell--bottom">
-            trudyfkughil
-          </div>
-
-        </div>
-        <div class="grid-item"  @click="showModal3 = true" >
-          <div class="grid-cell--top">
-            <img src="images/Questions.jpg" alt="feg">
-          </div>
-          <div class="grid-cell--bottom">
-            trudyfkughil
-          </div>
-        </div>
-      <div class="grid-item"  @click="showModal4 = true" >
-        <div class="grid-cell--top">
-          <img src="images/Questions.jpg" alt="feg">
-        </div>
-        <div class="grid-cell--bottom">
-          trudyfkughil
-        </div>
-
-      </div>
-      <div class="grid-item"  @click="showModal5 = true" >
-        <div class="grid-cell--top">
-          <img src="images/Questions.jpg" alt="feg">
-        </div>
-        <div class="grid-cell--bottom">
-          trudyfkughil
-        </div>
-      </div>
-      <div class="grid-item"  @click="showModal6 = true" >
-        <div class="grid-cell--top">
-          <img src="images/Questions.jpg" alt="feg">
-        </div>
-        <div class="grid-cell--bottom">
-          trudyfkughil
-        </div>
-      </div>
-      <div class="grid-item"  @click="showModal7 = true" >
-        <div class="grid-cell--top">
-          <img src="images/Questions.jpg" alt="feg">
-        </div>
-        <div class="grid-cell--bottom">
-          trudyfkughil
-        </div>
-
-      </div>
-      <div class="grid-item"  @click="showModal8 = true" >
-        <div class="grid-cell--top">
-          <img src="images/Questions.jpg" alt="feg">
-        </div>
-        <div class="grid-cell--bottom">
-          trudyfkughil
-        </div>
-
-      </div>
-      <div class="grid-item"  @click="showModal9 = true" >
-        <div class="grid-cell--top">
-          <img src="images/Questions.jpg" alt="feg">
-        </div>
-        <div class="grid-cell--bottom">
-          trudyfkughil
-        </div>
-      </div>
-      <div>
-        <modal v-if="showModal" @close="showModal = false">
-          <h3 slot="header">custom header</h3>
-        </modal>
-      </div>
-      <div>
-        <modal2 v-if="showModal2" @close="showModal2 = false">
-          <h3 slot="header">custom header</h3>
-        </modal2>
-      </div>
-      <div>
-        <modal3 v-if="showModal3" @close="showModal3 = false">
-          <h3 slot="header">custom header</h3>
-        </modal3>
-      </div>
-      <div>
-        <modal4 v-if="showModal4" @close="showModal4 = false">
-          <h3 slot="header">custom header</h3>
-        </modal4>
-      </div>
-      <div>
-        <modal5 v-if="showModal5" @close="showModal5 = false">
-          <h3 slot="header">custom header</h3>
-        </modal5>
-      </div>
-      <div>
-        <modal6 v-if="showModal6" @close="showModal6 = false">
-          <h3 slot="header">custom header</h3>
-        </modal6>
-      </div>
-      <div>
-        <modal7 v-if="showModal7" @close="showModal7 = false">
-          <h3 slot="header">custom header</h3>
-        </modal7>
-      </div>
-      <div>
-        <modal8 v-if="showModal8" @close="showModal8 = false">
-          <h3 slot="header">custom header</h3>
-        </modal8>
-      </div>
-      <div>
-        <modal9 v-if="showModal9" @close="showModal9 = false">
-          <h3 slot="header">custom header</h3>
-        </modal9>
-      </div>
+<head>
+  <link rel="stylesheet" href="css/style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link
+          rel="stylesheet"
+          href="https://cdn.rawgit.com/jgthms/minireset.css/master/minireset.css"
+  />
+  <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900"
+  />
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+<div id="app">
+  <div class="grid-item"  @click="showModal = true" >
+    <div class="grid-cell--top">
+      <img src="images/Questions.jpg" alt="feg">
     </div>
-    <script>
-      "use strict";
-      Vue.component('modal', {
-        template:  `<transition name="modal">
+    <div class="grid-cell--bottom">
+      trudyfkughil
+    </div>
+
+  </div>
+  <div class="grid-item"  @click="showModal2 = true" >
+    <div class="grid-cell--top">
+      <img src="images/Questions.jpg" alt="feg">
+    </div>
+    <div class="grid-cell--bottom">
+      trudyfkughil
+    </div>
+
+  </div>
+  <div class="grid-item"  @click="showModal3 = true" >
+    <div class="grid-cell--top">
+      <img src="images/Questions.jpg" alt="feg">
+    </div>
+    <div class="grid-cell--bottom">
+      trudyfkughil
+    </div>
+  </div>
+  <div class="grid-item"  @click="showModal4 = true" >
+    <div class="grid-cell--top">
+      <img src="images/Questions.jpg" alt="feg">
+    </div>
+    <div class="grid-cell--bottom">
+      trudyfkughil
+    </div>
+
+  </div>
+  <div class="grid-item"  @click="showModal5 = true" >
+    <div class="grid-cell--top">
+      <img src="images/Questions.jpg" alt="feg">
+    </div>
+    <div class="grid-cell--bottom">
+      trudyfkughil
+    </div>
+  </div>
+  <div class="grid-item"  @click="showModal6 = true" >
+    <div class="grid-cell--top">
+      <img src="images/Questions.jpg" alt="feg">
+    </div>
+    <div class="grid-cell--bottom">
+      trudyfkughil
+    </div>
+  </div>
+  <div class="grid-item"  @click="showModal7 = true" >
+    <div class="grid-cell--top">
+      <img src="images/Questions.jpg" alt="feg">
+    </div>
+    <div class="grid-cell--bottom">
+      trudyfkughil
+    </div>
+
+  </div>
+  <div class="grid-item"  @click="showModal8 = true" >
+    <div class="grid-cell--top">
+      <img src="images/Questions.jpg" alt="feg">
+    </div>
+    <div class="grid-cell--bottom">
+      trudyfkughil
+    </div>
+
+  </div>
+  <div class="grid-item"  @click="showModal9 = true" >
+    <div class="grid-cell--top">
+      <img src="images/Questions.jpg" alt="feg">
+    </div>
+    <div class="grid-cell--bottom">
+      trudyfkughil
+    </div>
+  </div>
+  <div>
+    <modal v-if="showModal" @close="showModal = false">
+      <div slot="header">
+        <p class="title">fezfezfezfez</p>
+
+      </div>
+
+      <div slot="body">
+        <img src="images/Questions.jpg" alt="illustration" class="portrait"><br><br>
+
+        fefzefezfezf
+
+      </div>
+    </modal>
+  </div>
+  <div>
+    <modal2 v-if="showModal2" @close="showModal2 = false">
+      <div slot="header">
+        <p class="title">fezfezfezfez</p>
+
+      </div>
+
+      <div slot="body">
+        <img src="images/Questions.jpg" alt="illustration" class="portrait"><br><br>
+
+        fefzefezfezf
+
+      </div>
+    </modal2>
+  </div>
+  <div>
+    <modal3 v-if="showModal3" @close="showModal3 = false">
+      <div slot="header">
+        <p class="title">fezfezfezfez</p>
+
+      </div>
+
+      <div slot="body">
+        <img src="images/Questions.jpg" alt="illustration" class="portrait"><br><br>
+
+        fefzefezfezf
+
+      </div>
+    </modal3>
+  </div>
+  <div>
+    <modal4 v-if="showModal4" @close="showModal4 = false">
+      <div slot="header">
+        <p class="title">fezfezfezfez</p>
+
+      </div>
+
+      <div slot="body">
+        <img src="images/Questions.jpg" alt="illustration" class="portrait"><br><br>
+
+        fefzefezfezf
+
+      </div>
+    </modal4>
+  </div>
+  <div>
+    <modal5 v-if="showModal5" @close="showModal5 = false">
+      <div slot="header">
+        <p class="title">fezfezfezfez</p>
+
+      </div>
+
+      <div slot="body">
+        <img src="images/Questions.jpg" alt="illustration" class="portrait"><br><br>
+
+        fefzefezfezf
+
+      </div>
+    </modal5>
+  </div>
+  <div>
+    <modal6 v-if="showModal6" @close="showModal6 = false">
+      <div slot="header">
+        <p class="title">fezfezfezfez</p>
+
+      </div>
+
+      <div slot="body">
+        <img src="images/Questions.jpg" alt="illustration" class="portrait"><br><br>
+
+        fefzefezfezf
+
+      </div>
+    </modal6>
+  </div>
+  <div>
+    <modal7 v-if="showModal7" @close="showModal7 = false">
+      <div slot="header">
+        <p class="title">fezfezfezfez</p>
+
+      </div>
+
+      <div slot="body">
+        <img src="images/Questions.jpg" alt="illustration" class="portrait"><br><br>
+
+        fefzefezfezf
+
+      </div>
+    </modal7>
+  </div>
+  <div>
+    <modal8 v-if="showModal8" @close="showModal8 = false">
+      <div slot="header">
+        <p class="title">fezfezfezfez</p>
+
+      </div>
+
+      <div slot="body">
+        <img src="images/Questions.jpg" alt="illustration" class="portrait"><br><br>
+
+        fefzefezfezf
+
+      </div>
+    </modal8>
+  </div>
+  <div>
+    <modal9 v-if="showModal9" @close="showModal9 = false">
+      <div slot="header">
+        <p class="title">fezfezfezfez</p>
+
+      </div>
+
+      <div slot="body">
+        <img src="images/Questions.jpg" alt="illustration" class="portrait"><br><br>
+
+        fefzefezfezf
+
+      </div>
+    </modal9>
+  </div>
+</div>
+<script>
+  "use strict";
+  Vue.component('modal', {
+    template:  `<transition name="modal">
         <div class="modal-mask">
           <div class="modal-wrapper">
+                      <button @click="$emit('close')" type="button" class="close">X</button>
 
               <div class="modal-container">
                   <div class="modal-header">
@@ -157,7 +248,6 @@
                               <slot name="body">
                                   default body
                               </slot>
-
                           </div>
                           <div class="footer">
                               <button @click="$emit('close')" type="button" class="button">CLOSE</button>
@@ -168,11 +258,12 @@
           </div>
         </div>
     </transition>`
-      });
-      Vue.component('modal2', {
-        template:  `<transition name="modal">
+  });
+  Vue.component('modal2', {
+    template:  `<transition name="modal">
         <div class="modal-mask">
           <div class="modal-wrapper">
+                      <button @click="$emit('close')" type="button" class="close">X</button>
 
               <div class="modal-container">
                   <div class="modal-header">
@@ -184,7 +275,6 @@
                               <slot name="body">
                                   default body
                               </slot>
-
                           </div>
                           <div class="footer">
                               <button @click="$emit('close')" type="button" class="button">CLOSE</button>
@@ -195,11 +285,12 @@
           </div>
         </div>
     </transition>`
-      });
-      Vue.component('modal3', {
-        template:  `<transition name="modal">
+  });
+  Vue.component('modal3', {
+    template:  `<transition name="modal">
         <div class="modal-mask">
           <div class="modal-wrapper">
+                      <button @click="$emit('close')" type="button" class="close">X</button>
 
               <div class="modal-container">
                   <div class="modal-header">
@@ -211,7 +302,6 @@
                               <slot name="body">
                                   default body
                               </slot>
-
                           </div>
                           <div class="footer">
                               <button @click="$emit('close')" type="button" class="button">CLOSE</button>
@@ -222,11 +312,12 @@
           </div>
         </div>
     </transition>`
-      });
-      Vue.component('modal4', {
-        template:  `<transition name="modal">
+  });
+  Vue.component('modal4', {
+    template:  `<transition name="modal">
         <div class="modal-mask">
           <div class="modal-wrapper">
+                      <button @click="$emit('close')" type="button" class="close">X</button>
 
               <div class="modal-container">
                   <div class="modal-header">
@@ -238,7 +329,6 @@
                               <slot name="body">
                                   default body
                               </slot>
-
                           </div>
                           <div class="footer">
                               <button @click="$emit('close')" type="button" class="button">CLOSE</button>
@@ -249,11 +339,12 @@
           </div>
         </div>
     </transition>`
-      });
-      Vue.component('modal5', {
-        template:  `<transition name="modal">
+  });
+  Vue.component('modal5', {
+    template:  `<transition name="modal">
         <div class="modal-mask">
           <div class="modal-wrapper">
+                      <button @click="$emit('close')" type="button" class="close">X</button>
 
               <div class="modal-container">
                   <div class="modal-header">
@@ -265,7 +356,6 @@
                               <slot name="body">
                                   default body
                               </slot>
-
                           </div>
                           <div class="footer">
                               <button @click="$emit('close')" type="button" class="button">CLOSE</button>
@@ -276,11 +366,12 @@
           </div>
         </div>
     </transition>`
-      });
-      Vue.component('modal6', {
-        template:  `<transition name="modal">
+  });
+  Vue.component('modal6', {
+    template:  `<transition name="modal">
         <div class="modal-mask">
           <div class="modal-wrapper">
+                      <button @click="$emit('close')" type="button" class="close">X</button>
 
               <div class="modal-container">
                   <div class="modal-header">
@@ -292,7 +383,6 @@
                               <slot name="body">
                                   default body
                               </slot>
-
                           </div>
                           <div class="footer">
                               <button @click="$emit('close')" type="button" class="button">CLOSE</button>
@@ -303,11 +393,12 @@
           </div>
         </div>
     </transition>`
-      });
-      Vue.component('modal7', {
-        template:  `<transition name="modal">
+  });
+  Vue.component('modal7', {
+    template:  `<transition name="modal">
         <div class="modal-mask">
           <div class="modal-wrapper">
+                      <button @click="$emit('close')" type="button" class="close">X</button>
 
               <div class="modal-container">
                   <div class="modal-header">
@@ -319,7 +410,6 @@
                               <slot name="body">
                                   default body
                               </slot>
-
                           </div>
                           <div class="footer">
                               <button @click="$emit('close')" type="button" class="button">CLOSE</button>
@@ -330,11 +420,12 @@
           </div>
         </div>
     </transition>`
-      });
-      Vue.component('modal8', {
-        template:  `<transition name="modal">
+  });
+  Vue.component('modal8', {
+    template:  `<transition name="modal">
         <div class="modal-mask">
           <div class="modal-wrapper">
+                      <button @click="$emit('close')" type="button" class="close">X</button>
 
               <div class="modal-container">
                   <div class="modal-header">
@@ -346,7 +437,6 @@
                               <slot name="body">
                                   default body
                               </slot>
-
                           </div>
                           <div class="footer">
                               <button @click="$emit('close')" type="button" class="button">CLOSE</button>
@@ -357,11 +447,12 @@
           </div>
         </div>
     </transition>`
-      });
-      Vue.component('modal9', {
-        template:  `<transition name="modal">
+  });
+  Vue.component('modal9', {
+    template:  `<transition name="modal">
         <div class="modal-mask">
           <div class="modal-wrapper">
+                      <button @click="$emit('close')" type="button" class="close">X</button>
 
               <div class="modal-container">
                   <div class="modal-header">
@@ -373,7 +464,6 @@
                               <slot name="body">
                                   default body
                               </slot>
-
                           </div>
                           <div class="footer">
                               <button @click="$emit('close')" type="button" class="button">CLOSE</button>
@@ -384,93 +474,93 @@
           </div>
         </div>
     </transition>`
-      });
-      // preview appelle chaque image du dossier image
-      function preview(name) {
-        var out = `<img class="fit" src="images/` + name + `.jpg">`;
-        return out;
-      }
+  });
+  // preview appelle chaque image du dossier image
+  function preview(name) {
+    var out = `<img class="fit" src="images/` + name + `.jpg">`;
+    return out;
+  }
 
-      // data pour chaque projet de la grille
-      let app = new Vue({
-        el: "#app",
-        data: {
-          showModal: false,
-          showModal2: false,
-          showModal3: false,
-          showModal4: false,
-          showModal5: false,
-          showModal6: false,
-          showModal7: false,
-          showModal8: false,
-          showModal9: false,
-          swatches: [
-            {
-              id: '1',
-              name: "#ff691f",
-              project: "Be Happik",
-              previews: preview("Questions"),
-              text :  "Be Happik est une solution SAAS* et d’application proposant d’améliorer le bien être en entreprise en proposant plus d’engagement de la part des collaborateurs.",
-              image : 'https://devlab.devinci.fr/wp-content/uploads/2019/03/adult-2449725_1920-768x512.jpg',
+  // data pour chaque projet de la grille
+  let app = new Vue({
+    el: "#app",
+    data: {
+      showModal: false,
+      showModal2: false,
+      showModal3: false,
+      showModal4: false,
+      showModal5: false,
+      showModal6: false,
+      showModal7: false,
+      showModal8: false,
+      showModal9: false,
+      swatches: [
+        {
+          id: '1',
+          name: "#ff691f",
+          project: "Be Happik",
+          previews: preview("Questions"),
+          text :  "Be Happik est une solution SAAS* et d’application proposant d’améliorer le bien être en entreprise en proposant plus d’engagement de la part des collaborateurs.",
+          image : 'https://devlab.devinci.fr/wp-content/uploads/2019/03/adult-2449725_1920-768x512.jpg',
 
-            },
-            {
-              name: "#fab81e",
-              project: "Projet 2",
-              previews: preview("Questions"),
-              text: "efzargt",
-              image : 'images/Questions.jpg'
-
-            },
-            {
-              name: "#7fdbb6",
-              project: "Projet 3",
-              previews: preview("Questions"),
-              text: "hnj"
-            },
-            {
-              name: "#19cf86",
-              project: "Projet 4",
-              previews: preview("Questions"),
-              text: "hnj",
-
-            },
-            {
-              name: "#91d2fa",
-              project: "Projet 5",
-              previews: preview("Questions"),
-            },
-            {
-              name: "#1b95e0",
-              project: "Projet 6",
-              previews: preview("Questions"),
-              text: "hnj"
-
-            },
-            {
-              name: "#abb8c2",
-              project: "Projet 7",
-              previews: preview("Questions"),
-              text: "hnj"
-
-            },
-            {
-              name: "#e81c4f",
-              project: "Projet 8",
-              previews: preview("Questions"),
-              text: "hnj"
-
-            },
-            {
-              name: "#f58ea8",
-              project: "Projet 9",
-              previews: preview("Questions"),
-              text: "hnj"
-
-            }
-          ],
         },
-      });
-    </script>
-  </body>
+        {
+          name: "#fab81e",
+          project: "Projet 2",
+          previews: preview("Questions"),
+          text: "efzargt",
+          image : 'images/Questions.jpg'
+
+        },
+        {
+          name: "#7fdbb6",
+          project: "Projet 3",
+          previews: preview("Questions"),
+          text: "hnj"
+        },
+        {
+          name: "#19cf86",
+          project: "Projet 4",
+          previews: preview("Questions"),
+          text: "hnj",
+
+        },
+        {
+          name: "#91d2fa",
+          project: "Projet 5",
+          previews: preview("Questions"),
+        },
+        {
+          name: "#1b95e0",
+          project: "Projet 6",
+          previews: preview("Questions"),
+          text: "hnj"
+
+        },
+        {
+          name: "#abb8c2",
+          project: "Projet 7",
+          previews: preview("Questions"),
+          text: "hnj"
+
+        },
+        {
+          name: "#e81c4f",
+          project: "Projet 8",
+          previews: preview("Questions"),
+          text: "hnj"
+
+        },
+        {
+          name: "#f58ea8",
+          project: "Projet 9",
+          previews: preview("Questions"),
+          text: "hnj"
+
+        }
+      ],
+    },
+  });
+</script>
+</body>
 </html>
