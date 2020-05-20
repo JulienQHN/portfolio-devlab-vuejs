@@ -84,8 +84,10 @@ img {
   top: 50%;
   transform: translate(-50%, -50%);
   z-index: 9998;
-  background-color: rgba(0, 0, 0, .5);
+  background-color: rgba(0, 0, 0, 0.5);
   transition: opacity .3s ease;
+
+
 }
 
 .modal-wrapper {
@@ -135,6 +137,7 @@ img {
   width: 100%;
   border-radius: 0;
   max-height: 200px;
+  margin-top: 20px;
 
 }
 
@@ -145,6 +148,7 @@ img {
   width: 125px;
   height: 30px;
   border-radius: 10px;
+  margin-top: 20px;
 }
 
 .title {
@@ -153,4 +157,8 @@ img {
 
 .grid-item:hover {
   cursor: pointer;
+}
+
+.description {
+  margin-top: 20px;
 }
